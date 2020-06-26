@@ -31,18 +31,6 @@ pipeline {
 		        }		
 		    }
 	   
-	
-        stage('Deploy Stage') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
-                bat 'mvn deploy'
-            }
-        }
-    
 	   
   }	
 }
