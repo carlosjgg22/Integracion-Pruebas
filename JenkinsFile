@@ -7,13 +7,13 @@ pipeline {
 	} 
 
 	stages{
-		stage('Fase de Compilación'){
+		stage('Compile Stage'){
 		    steps{
 		     bat 'mvn compile'		
 		        }		
 		    }	
 
-       stage('Fase de Pruebas'){
+       stage('Test Stage'){
 		    steps{
 		     bat 'mvn test'		
 		    }
@@ -25,9 +25,9 @@ pipeline {
             }
 	    }	
 
-       stage('Deploy Stage'){
+       stage('Package Stage'){
 		    steps{
-		     bat 'mvn deploy'		
+		     bat 'mvn package'		
 		        }		
 		    }
 	    }	
