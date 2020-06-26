@@ -39,7 +39,7 @@ pipeline {
               }
             }
             steps {
-                bat 'make publish'
+                bat 'mvn clean deploy'
             }
         }
     
