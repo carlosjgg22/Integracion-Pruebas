@@ -31,7 +31,7 @@ pipeline {
 		        }		
 		    }
 	   
-	    stages {
+	
         stage('Deploy Stage') {
             when {
               expression {
@@ -42,7 +42,8 @@ pipeline {
                 bat 'make publish'
             }
         }
-    }
+    
 	   
   }	
 }
+	
