@@ -30,5 +30,19 @@ pipeline {
 		     bat 'mvn package'		
 		        }		
 		    }
-	    }	
+	   
+	    stages {
+        stage('Deploy Stage') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                bat 'make publish'
+            }
+        }
+    }
+	   
+  }	
 }
